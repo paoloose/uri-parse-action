@@ -1,0 +1,27 @@
+name: 'URI Parser'
+description: 'Parse a Uniform Resource Identifier string in your GitHub Actions. Compatible with RFC 3986'
+inputs:
+  uri:
+    description: 'URI string to parse'
+    required: true
+outputs:
+  # See URI Syntax <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax>
+  scheme:
+    description: 'Scheme component of the URI. Does not include the colon (:).'
+  authority:
+    description: 'Authority component of the URI.'
+  userinfo:
+    description: 'User Information component of the URI.'
+  host:
+    description: 'Host component of the URI.'
+  port:
+    description: 'Port component of the URI.'
+  path:
+    description: 'Path component of the URI. It is either empty or begin with a slash (/).'
+  query:
+    description: 'Query component of the URI. Does not include the question mark (?).'
+  fragment:
+    description: 'Fragment component of the URI. Does not include the hash (#).'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
