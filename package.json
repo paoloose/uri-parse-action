@@ -1,0 +1,20 @@
+{
+  "name": "uri-parse-action",
+  "version": "1.0.0",
+  "description": "Parse a Uniform Resource Identifier string in your GitHub Actions",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dist": "ncc build index.ts -o dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@vercel/ncc": "^0.38.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
