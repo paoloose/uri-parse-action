@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Parse database URL
         id: database-url
-        uses: paoloose/uri-parse-action@v1.0.0beta.5
+        uses: paoloose/uri-parse-action@v1
         with:
           uri: ${{ vars.DATABASE_URL }}
 
