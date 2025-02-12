@@ -28,6 +28,7 @@ jobs:
           echo DB_USER: ${{ steps.database-url.outputs.username }}
           echo DB_PASSWORD: ${{ steps.database-url.outputs.password }}
           echo DB_HOST: ${{ steps.database-url.outputs.host }}
+          echo DB_HOSTNAME: ${{ steps.database-url.outputs.hostname }}
           echo DB_PORT: ${{ steps.database-url.outputs.username }}
           echo DB_NAME: ${{ steps.database-url.outputs.path }}
 ```
