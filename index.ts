@@ -1,4 +1,4 @@
-import core from '@actions/core';
+const core = require('@actions/core');
 
 try {
     const uri = core.getInput('uri');

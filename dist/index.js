@@ -27418,66 +27418,36 @@ module.exports = parseParams
 /******/ }
 /******/ 
 /************************************************************************/
-/******/ /* webpack/runtime/compat get default export */
-/******/ (() => {
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__nccwpck_require__.n = (module) => {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			() => (module['default']) :
-/******/ 			() => (module);
-/******/ 		__nccwpck_require__.d(getter, { a: getter });
-/******/ 		return getter;
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/define property getters */
-/******/ (() => {
-/******/ 	// define getter functions for harmony exports
-/******/ 	__nccwpck_require__.d = (exports, definition) => {
-/******/ 		for(var key in definition) {
-/******/ 			if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
-/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 			}
-/******/ 		}
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/hasOwnProperty shorthand */
-/******/ (() => {
-/******/ 	__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ })();
-/******/ 
 /******/ /* webpack/runtime/compat */
 /******/ 
 /******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7484);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
 
+const core = __nccwpck_require__(7484);
 try {
-    const uri = _actions_core__WEBPACK_IMPORTED_MODULE_0___default().getInput('uri');
+    const uri = core.getInput('uri');
     const url = new URL(uri);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('uri', url.href);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('decodedUri', decodeURI(url.href));
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('scheme', removeSufix(url.protocol, ':'));
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('username', url.username);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('password', url.password);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('host', url.host);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('hostname', url.hostname);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('port', url.port);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('path', removePrefix(url.pathname, '/'));
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('decodedPath', decodeURIComponent(removePrefix(url.pathname, '/')));
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('query', removePrefix(url.search, '?'));
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('fragment', removePrefix(url.hash, '#'));
+    core.setOutput('uri', url.href);
+    core.setOutput('decodedUri', decodeURI(url.href));
+    core.setOutput('scheme', removeSufix(url.protocol, ':'));
+    core.setOutput('username', url.username);
+    core.setOutput('password', url.password);
+    core.setOutput('host', url.host);
+    core.setOutput('hostname', url.hostname);
+    core.setOutput('port', url.port);
+    core.setOutput('path', removePrefix(url.pathname, '/'));
+    core.setOutput('decodedPath', decodeURIComponent(removePrefix(url.pathname, '/')));
+    core.setOutput('query', removePrefix(url.search, '?'));
+    core.setOutput('fragment', removePrefix(url.hash, '#'));
 }
 catch (error) {
     if (error instanceof Error) {
-        _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setFailed(error.message);
+        core.setFailed(error.message);
     }
     else {
-        _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setFailed(error.toString());
+        core.setFailed(error.toString());
     }
 }
 function removePrefix(what, prefix) {
