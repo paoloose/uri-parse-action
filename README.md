@@ -6,6 +6,32 @@ Uses the URL Web API to parse the URI string.
 
 Follows the RFC 3986 naming convention. See <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax>.
 
+## Example
+
+Parsing a database url (e.g. `postgres://user:pass@server:5432/db`) from a GitHub secret
+
+```yaml
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse database URL
+        id: database-url
+        uses: paoloose/uri-parse-action@v1.0.0beta.5
+        with:
+          uri: ${{ secrets.DATABASE_URL }}
+
+      - name: Print database URL components
+        shell: bash
+        run: |
+          echo DB_SCHEMA: ${{ steps.database-url.outputs.scheme }}
+          echo DB_USER: ${{ steps.database-url.outputs.username }}
+          echo DB_PASSWORD: ${{ steps.database-url.outputs.password }}
+          echo DB_HOST: ${{ steps.database-url.outputs.host }}
+          echo DB_PORT: ${{ steps.database-url.outputs.username }}
+          echo DB_NAME: ${{ steps.database-url.outputs.path }}
+```
+
 ## Inputs
 
 ### `uri`

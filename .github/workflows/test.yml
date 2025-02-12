@@ -1,0 +1,23 @@
+on:
+  push:
+    branches: [main]
+
+jobs:
+  database-url-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse database URL
+        id: database-url
+        uses: paoloose/uri-parse-action@v1.0.0beta.5
+        with:
+          uri: ${{ vars.DATABASE_URL }}
+
+      - name: Print database URL components
+        shell: bash
+        run: |
+          echo DB_SCHEMA: ${{ steps.database-url.outputs.scheme }}
+          echo DB_USER: ${{ steps.database-url.outputs.username }}
+          echo DB_PASSWORD: ${{ steps.database-url.outputs.password }}
+          echo DB_HOST: ${{ steps.database-url.outputs.host }}
+          echo DB_PORT: ${{ steps.database-url.outputs.username }}
+          echo DB_NAME: ${{ steps.database-url.outputs.path }}
