@@ -11,8 +11,8 @@ try {
     core.setOutput('password', url.password);
     core.setOutput('host', url.hostname);
     core.setOutput('port', url.port);
-    core.setOutput('path', url.pathname);
-    core.setOutput('decodedPath', decodeURIComponent(url.pathname));
+    core.setOutput('path', removePrefix(url.pathname, '/'));
+    core.setOutput('decodedPath', decodeURIComponent(removePrefix(url.pathname, '/')));
     core.setOutput('query', removePrefix(url.search, '?'));
     core.setOutput('fragment', removePrefix(url.hash, '#'));
 } catch (error) {
