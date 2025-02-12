@@ -27459,11 +27459,16 @@ var __webpack_exports__ = {};
 try {
     const uri = _actions_core__WEBPACK_IMPORTED_MODULE_0___default().getInput('uri');
     const url = new URL(uri);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('uri', url.href);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('decodedUri', decodeURI(url.href));
     _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('scheme', removeSufix(url.protocol, ':'));
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('userinfo', url.username);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('host', url.hostname);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('username', url.username);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('password', url.password);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('host', url.host);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('hostname', url.hostname);
     _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('port', url.port);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('path', url.pathname);
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('path', removePrefix(url.pathname, '/'));
+    _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('decodedPath', decodeURIComponent(removePrefix(url.pathname, '/')));
     _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('query', removePrefix(url.search, '?'));
     _actions_core__WEBPACK_IMPORTED_MODULE_0___default().setOutput('fragment', removePrefix(url.hash, '#'));
 }
