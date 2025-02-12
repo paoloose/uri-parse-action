@@ -6,18 +6,24 @@ inputs:
     required: true
 outputs:
   # See URI Syntax <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax>
+  decodedUri:
+    description: 'The decoded URI string. Equivalent to JavaScript decodeURI(uri)'
   scheme:
     description: 'Scheme component of the URI. Does not include the colon (:).'
   authority:
     description: 'Authority component of the URI.'
-  userinfo:
-    description: 'User Information component of the URI.'
+  username:
+    description: 'Username component of the URI.'
+  password:
+    description: 'Password component of the URI.'
   host:
     description: 'Host component of the URI.'
   port:
     description: 'Port component of the URI.'
   path:
-    description: 'Path component of the URI. It is either empty or begin with a slash (/).'
+    description: 'Path component of the URI. Does not include the leading slash (/).'
+  decodedPath:
+    description: 'Decoded Path component of the URI. Equivalent to JavaScript decodeURIComponent(path). Does not include the leading slash (/).'
   query:
     description: 'Query component of the URI. Does not include the question mark (?).'
   fragment:

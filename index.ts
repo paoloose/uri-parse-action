@@ -4,11 +4,15 @@ try {
     const uri = core.getInput('uri');
     const url = new URL(uri);
 
+    core.setOutput('uri', url.href);
+    core.setOutput('decodedUri', decodeURI(url.href));
     core.setOutput('scheme', removeSufix(url.protocol, ':'));
-    core.setOutput('userinfo', url.username);
+    core.setOutput('username', url.username);
+    core.setOutput('password', url.password);
     core.setOutput('host', url.hostname);
     core.setOutput('port', url.port);
     core.setOutput('path', url.pathname);
+    core.setOutput('decodedPath', decodeURIComponent(url.pathname));
     core.setOutput('query', removePrefix(url.search, '?'));
     core.setOutput('fragment', removePrefix(url.hash, '#'));
 } catch (error) {
