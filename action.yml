@@ -17,7 +17,9 @@ outputs:
   password:
     description: 'Password component of the URI.'
   host:
-    description: 'Host component of the URI.'
+    description: 'Host component of the URI. Includes the port if specified.'
+  hostname:
+    description: 'Hostname component of the URI. Does not include the port.'
   port:
     description: 'Port component of the URI.'
   path:

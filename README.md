@@ -36,7 +36,11 @@ Password component of the URI.
 
 ### `host`
 
-Host component of the URI.
+Host component of the URI. Includes the port if specified.
+
+### `hostname`
+
+Hostname component of the URI. Does not include the port.
 
 ### `port`
 

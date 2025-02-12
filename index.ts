@@ -9,7 +9,8 @@ try {
     core.setOutput('scheme', removeSufix(url.protocol, ':'));
     core.setOutput('username', url.username);
     core.setOutput('password', url.password);
-    core.setOutput('host', url.hostname);
+    core.setOutput('host', url.host);
+    core.setOutput('hostname', url.hostname);
     core.setOutput('port', url.port);
     core.setOutput('path', removePrefix(url.pathname, '/'));
     core.setOutput('decodedPath', decodeURIComponent(removePrefix(url.pathname, '/')));
